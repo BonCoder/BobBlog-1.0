@@ -1,0 +1,205 @@
+[ 2018-03-27T20:42:29+08:00 ] 171.221.104.215 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000070s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000070s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000113s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+NOTIC: [8] Undefined variable: error /alidata/www/blog/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001316s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000063s ]
+
+[ 2018-03-27T20:42:31+08:00 ] 171.221.104.215 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000067s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000052s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000091s ]
+NOTIC: [2] Declaration of Admin\Model\UserModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/UserModel.class.php 第 14 行.
+NOTIC: [2] Declaration of Admin\Model\UserModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/UserModel.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0016s ]
+NOTIC: [8] Undefined index: validate /alidata/www/blog/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /alidata/www/blog/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: SELECT `id`,`name`,`password`,`salt`,`status` FROM `user` WHERE `name` = 'admin' LIMIT 1   [ RunTime:0.0013s ]
+SQL: UPDATE `user` SET `last_time`='2018-03-27 20:42:30',`last_ip`='171.221.104.215' WHERE `id` = 1 [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0014s ]
+SQL: SELECT `username`,`logo_url` FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` LIMIT 1   [ RunTime:0.0933s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0839s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0845s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.1155s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now())-1 ) LIMIT 1   [ RunTime:0.1168s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0972s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE (  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( created_at, '%Y%m' ) ) =1 ) LIMIT 1   [ RunTime:0.1124s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [2] Declaration of Admin\Model\FriendModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\FriendModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( YEARWEEK(date_format(createTime,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( date_format(createTime,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `system_info` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `system_info` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`created_at` FROM `post` ORDER BY created_at desc LIMIT 7   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006296s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006339s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000073s ]
+
+[ 2018-03-27T20:42:34+08:00 ] 171.221.104.215 /Admin/Post/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000104s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000077s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000060s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000100s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT p.*,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `title` LIKE '%%' ORDER BY p.id desc LIMIT 0,10   [ RunTime:0.0361s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006932s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006981s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000075s ]
+
+[ 2018-03-27T20:42:35+08:00 ] 171.221.104.215 /Admin/PostCategory/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000067s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000056s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000099s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 15 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 15 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post_category` WHERE `name` LIKE '%%' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `post_category` WHERE `name` LIKE '%%' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE ( category_id=24 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE ( category_id=23 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE ( category_id=22 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE ( category_id=21 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE ( category_id=20 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE ( category_id=19 ) LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+NOTIC: [8] Undefined variable: line /alidata/www/blog/Application/Runtime/Cache/Admin/8499d5e9070322825b49a101aea05cd9.php 第 351 行.
+NOTIC: [8] Undefined variable: line /alidata/www/blog/Application/Runtime/Cache/Admin/8499d5e9070322825b49a101aea05cd9.php 第 351 行.
+NOTIC: [8] Undefined variable: line /alidata/www/blog/Application/Runtime/Cache/Admin/8499d5e9070322825b49a101aea05cd9.php 第 351 行.
+NOTIC: [8] Undefined variable: line /alidata/www/blog/Application/Runtime/Cache/Admin/8499d5e9070322825b49a101aea05cd9.php 第 351 行.
+NOTIC: [8] Undefined variable: line /alidata/www/blog/Application/Runtime/Cache/Admin/8499d5e9070322825b49a101aea05cd9.php 第 351 行.
+NOTIC: [8] Undefined variable: line /alidata/www/blog/Application/Runtime/Cache/Admin/8499d5e9070322825b49a101aea05cd9.php 第 351 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005679s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2018-03-27T20:42:36+08:00 ] 171.221.104.215 /Admin/Post/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000081s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000055s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000100s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT p.*,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `title` LIKE '%%' ORDER BY p.id desc LIMIT 0,10   [ RunTime:0.0285s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006807s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000069s ]
+

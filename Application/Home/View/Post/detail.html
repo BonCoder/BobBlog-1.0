@@ -1,0 +1,130 @@
+<extend name="Layouts/main"/>
+<block name="css">
+    <link rel="stylesheet" href="__STATIC__/share/dist/css/share.min.css">
+    <link rel="stylesheet" href="__STATIC__/share/demo/life.css">
+    <link rel="stylesheet" href="__STATIC__/share/default.css">
+    <link rel="stylesheet" href="__STATIC__/highlight/styles/agate.css">
+    <style>
+        .w-e-text pre code {  background: #333;}
+    </style>
+</block>
+<block name="content">
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3 class="post-title">
+                    <a href="{:U('Post/detail',array('id'=>$post['id']))}" title="{$post.title}">{$post.title}</a>
+                </h3>
+                <div class="post-meta">
+                    <span class="ion-calendar">
+                        <span class="post-meta-color"> <php>echo
+                            date("Y-m-d",strtotime($post['created_at']));
+                        </php></span>&emsp;
+                    </span>
+                    <a href="javascript:;" style="color:#777" class="ion-heart" id="like_num">
+                        <span class="post-meta-color"> {$post.like_num}</span>&emsp;
+                    </a>
+                    <span class="ion-eye">
+                        <span class="post-meta-color"> {$post.read_count}</span>&emsp;
+                    </span>
+                    <span class="ion-ios-pricetags-outline">
+                        <span class="post-meta-color"> {$post.category_name} </span>&emsp;
+                    </span>
+                </div>
+                <div style="margin-top: -8px;">&nbsp;</div>
+                <div class="post-content w-e-text">
+                        {$post.content|htmlspecialchars_decode}
+                </div>
+                <footer class="blog-post-page-tags">
+                    <span style="font-size: 16px">标签:</span>
+                    <foreach name="postTabs" item="tabs">
+                        <a href="{:U('Post/tab',array('id'=>$tabs['id']))}" rel="tag" data-toggle="tooltip"
+                           data-placement="top" title="" class="tag-could tag-could{$tabs.class_tab}"
+                           data-original-title="Linux" target="_blank" pram="{$tabs.id}">{$tabs.tab_name}</a>
+                    </foreach>
+                </footer>
+                <div class="money-like" id="like-money">
+                    <div class="reward-button">赏
+                        <span class="money-code">
+								<span class="alipay-code">
+									<img class="alipay-img" src="__IMG__/alipay.png"><b>支付宝扫码打赏</b>
+								</span>
+                                <span class="alipay-code" style="margin-left: 20px;">
+									<img class="alipay-img" src="__IMG__/weixin.png"><b>微信扫码打赏</b>
+								</span>
+                            <span class="alipay-code" style="margin-left: 20px;">
+									<img class="alipay-img" src="__IMG__/qq.png"><b>财付通扫码打赏</b>
+								</span>
+							</span>
+                    </div>
+                    <p class="money-notice">若你觉得我的文章对你有帮助,欢迎点击上方按钮对我打赏</p>
+                </div>
+                <div align="center">
+                    <img class="webcode" src="__IMG__/www.bobcoder.cc.png"><br>
+                    <b>扫描二维码，分享此网站</b>
+                </div>
+            </div>
+        </div>
+        <p class="tags">分享至：</p>
+        <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban"
+             data-wechat-qrcode-title="请打开微信扫一扫">
+        </div>
+
+        <!--上一页，下一页-->
+        <div id="pre-page">
+            <span>
+                <span style="color: #333">上一篇：&nbsp;</span>
+                <a href="<?php if($postPre){echo $postPre['id'];}else{echo 'javascript:;';}?>" rel="prev">
+                    <?php if($postPre){echo $postPre['title'];}else{echo '无';}?>
+                </a>
+            </span>
+            <span>
+                <span style="color: #333">下一篇：&nbsp;</span>
+                <a href="<?php if($postNext){echo U('Post/detail',array('id'=>$postNext['id']));}else{echo 'javascript:;';}?>"
+                   rel="prev">
+                    <?php if($postNext){echo $postNext['title'];}else{echo '无';}?>
+                </a>
+            </span>
+            <a href="javascript:;">&emsp;</a>
+        </div>
+        <!--PC和WAP自适应版-->
+        <div id="SOHUCS" sid="{$post.id}" ></div>
+
+    </div>
+</block>
+<block name="js">
+    <script src="__STATIC__/share/src/js/jquery.share.js"></script>
+    <script src="__STATIC__/share/src/js/jquery.qrcode.min.js"></script>
+    <script src="__STATIC__/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        (function(){
+            var appid = 'cyt71qrx0';
+            var conf = 'prod_1530361e2ba8b157ffe4d6fd31d125ba';
+            var width = window.innerWidth || document.documentElement.clientWidth;
+            if (width < 960) {
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    <script>
+        document.styleSheets[0].addRule('.line', 'width: 720px');
+        $('.big-container').attr('id', 'main');
+        // 点赞
+        $('#like_num').click(function () {
+            var id = '{$post.id}';
+            $.ajax({
+                url: "{:U('Post/like')}",
+                type: "post",
+                data: {'id': id},
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == 200) {
+                        $('#like_num').css('color', '#53d572');
+                        $('#like_num').children('span').html(data.like_num);
+                    }
+                },
+                error: function () {
+                    //todo
+                }
+            });
+        });
+    </script>
+</block>

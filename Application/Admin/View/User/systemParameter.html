@@ -1,0 +1,165 @@
+<extend name="Layouts/main"/>
+<block name="content-wrapper">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                系统基本参数
+                <small>系统参数修改</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="javascript:;"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active"> 系统基本参数</li>
+            </ol>
+        </section>
+
+        <notempty name="Think.cookie.successMsg">
+            <div class="alert alert-success alert-dismissible" style="margin-top: 20px;">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                {$Think.cookie.successMsg}
+            </div>
+        </notempty>
+        <notempty name="Think.cookie.errorMsg">
+            <div class="alert alert-warning alert-dismissible" style="margin-top: 20px;">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                {$Think.cookie.errorMsg}
+            </div>
+        </notempty>
+
+        <!-- Main content -->
+        <div class="childrenBody" style="height: 100%">
+        <form action="{:U()}" class="layui-form" method="post">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="20%">
+                    <col width="50%">
+                    <col>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>参数说明</th>
+                    <th>参数值</th>
+                    <th>变量名</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>当前版本</td>
+                    <td><input type="text" class="layui-input version" name="version" placeholder="请输入当前模版版本" value="{$sysInfo.version}"></td>
+                    <td>version</td>
+                </tr>
+                <tr>
+                    <td>开发作者</td>
+                    <td><input type="text" class="layui-input author" name="author" placeholder="请输入开发作者" value="{$sysInfo.author}"></td>
+                    <td>author</td>
+                </tr>
+                <tr>
+                    <td>网站首页</td>
+                    <td><input type="text" class="layui-input homePage" name="homePage" placeholder="请输入网站首页" value="{$sysInfo.homepage}"></td>
+                    <td>homePage</td>
+                </tr>
+                <tr>
+                    <td>服务器环境</td>
+                    <td><input type="text" class="layui-input server" name="server" placeholder="请输入服务器环境" value="{$sysInfo.server}"></td>
+                    <td>server</td>
+                </tr>
+                <tr>
+                    <td>服务器IP</td>
+                    <td><input type="text" class="layui-input server" name="ip" placeholder="请输入服务器IP" value="{$sysInfo.ip}"></td>
+                    <td>ip</td>
+                </tr>
+                <tr>
+                    <td>数据库版本</td>
+                    <td><input type="text" class="layui-input dataBase" name="dataBase" placeholder="请输入数据库版本" value="{$sysInfo.database}"></td>
+                    <td>dataBase</td>
+                </tr>
+                <tr>
+                    <td>用户权限</td>
+                    <td><input type="text" class="layui-input userRights" name="userRights" placeholder="请输入当前用户权限" value="{$sysInfo.userrights}"></td>
+                    <td>userRights</td>
+                </tr>
+                <tr>
+                    <td>默认关键字</td>
+                    <td><input type="text" class="layui-input keywords" name="keywords" placeholder="请输入默认关键字" value="{$sysInfo.keywords}"></td>
+                    <td>keywords</td>
+                </tr>
+                <tr>
+                    <td>版权信息</td>
+                    <td><input type="text" class="layui-input powerby" name="powerby" placeholder="请输入网站版权信息" value="{$sysInfo.powerby}"></td>
+                    <td>powerby</td>
+                </tr>
+                <tr>
+                    <td>网站描述</td>
+                    <td><textarea placeholder="请输入网站描述" name="description" class="layui-textarea description" >{$sysInfo.description}</textarea></td>
+                    <td>description</td>
+                </tr>
+                <tr>
+                    <td>网站备案号</td>
+                    <td><input type="text" class="layui-input record " name="record" placeholder="请输入网站备案号" value="{$sysInfo.record}"></td>
+                    <td>record</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="layui-form-item" style="text-align: right;margin-top: 15px;">
+                <div class="layui-input-block" >
+                    <button class="layui-btn" lay-submit="" lay-filter="systemParameter">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</block>
+
+<block name="js">
+    <script>
+        $(function () {
+            // 删除单条
+            $(".js-delete-one").click(function () {
+                var id = $(this).attr("data-id");
+
+                leaf.confirm("您确定要删除吗？", function () {
+                    // 把id填充到form表单中
+                    $("#js-delete-form input[name='id']").val(id);
+
+                    // 提交表单
+                    $("#js-delete-form").submit();
+                });
+            });
+
+            // 多条删除
+            $(".js-delete").click(function () {
+                var ids = [];
+                var checkboxList = $(".ids:checked"); // 取到已选中的项
+
+                for (var i = 0; i < checkboxList.length; i++) {
+                    ids.push($(checkboxList[i]).val());
+                }
+
+                if (ids.length == 0) {
+                    leaf.toast("请选择你要删除的数据！");
+                    return;
+                }
+
+                leaf.confirm("你确定要删除吗？", function () {
+                    // 把id填充到form表单中
+                    $("#js-delete-form input[name='id']").val(ids.toString());
+
+                    // 提交表单
+                    $("#js-delete-form").submit();
+                });
+            });
+
+            // 实现全选影响下面复选框的选中效果
+            $(".js-select-all").click(function () {
+                $(".ids").prop("checked", $(this).prop('checked'));
+            });
+
+            // 实现单个选择影响上方复选框的选中效果
+            $('.ids').click(function () {
+                $('.js-select-all').prop('checked', $('.ids:not(:checked)').length == 0);
+            });
+
+        })
+
+    </script>
+</block>

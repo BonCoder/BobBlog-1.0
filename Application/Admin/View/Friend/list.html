@@ -1,0 +1,138 @@
+<extend name="Layouts/main"/>
+<block name="content-wrapper">
+    <script type="text/javascript" src="__STATIC__/layui2/layui.js"></script>
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                友情链接
+                <small>友链管理</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="javascript:;"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active">友情链接</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <div class="childrenBody">
+            <blockquote class="layui-elem-quote news_search">
+                <form action="{:U()}" method="get">
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" value="{$keyword}" name="name" placeholder="请输入关键字" class="layui-input search_input">
+                        </div>
+                        <button type="submit" class="layui-btn search_btn">
+                            <span class="glyphicon glyphicon-search"></span> 搜索
+                        </button>
+                    </div>
+                </form>
+                <br>
+                <div class="layui-inline">
+                    <a href="{:U('Friend/create')}" class="layui-btn layui-btn-normal newsAdd_btn">添加友链</a>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-danger batchDel js-delete">批量删除</a>
+                    <form id="js-delete-form" method="post" action="{:U('Friend/delete')}"
+                          style="display: none">
+                        <input type="text" name="id" value="">
+                    </form>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-form-mid layui-word-aux">本页面刷新后除新添加的文章外所有操作无效，关闭页面所有数据重置</div>
+                </div>
+            </blockquote>
+            <div class="layui-form news_list">
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="50">
+                        <col width="20%">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col width="13%">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox" name="" lay-skin="primary" class="js-select-all" lay-filter="allChoose" id="allChoose"></th>
+                        <th style="text-align:left;">友链名</th>
+                        <th>地址</th>
+                        <th>状态</th>
+                        <th>邮箱</th>
+                        <th>添加时间</th>
+                        <th>修改时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="">
+                    <foreach name="line" item="line">
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="ids" name="checked" lay-skin="primary" lay-filter="choose" value="{$line.id}">
+                                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
+                            </td>
+                            <td>{$line.line_name}</td>
+                            <td><a style="color:#1E9FFF;" target="_blank" href="{$line.line_url}">{$line.line_url}</a></td>
+                            <td>
+                                <if condition="$line.status eq 1 ">
+                                    <input type="checkbox" name="show" lay-skin="switch" value="{$line.id}" class="status" lay-text="是|否" lay-filter="isShow" checked>
+                                    <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>是</em><i></i></div>
+                                    <else />
+                                    <input type="checkbox" name="show" lay-skin="switch" value="{$line.id}" class="status" lay-text="是|否" lay-filter="isShow">
+                                    <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div>
+                                </if>
+                            </td>
+                            <td>{$line.email}</td>
+                            <td>{$line.createtime}</td>
+                            <td>{$line.updatetime}</td>
+                            <td>
+                                <a href="{:U('Friend/create', array('id'=>$line['id']))}" class="layui-btn layui-btn-mini "><i class="iconfont icon-edit"></i> 编辑</a>
+                                <a data-id="{$line.id}" class="js-delete-one layui-btn layui-btn-danger layui-btn-mini " data-id="1">
+                                    <i class="layui-icon"></i> 删除</a>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+            </div>
+            <div id="page">
+                <!--分页-->
+                <div class="box-tools pull-right">
+                    <ul class="pagination inline">
+                        {$pagination}
+                    </ul>
+                </div>
+            </div>
+            <style>
+                .pagination > li > a {
+                    /* background: #fafafa; */
+                    color: #666;
+                }
+                .pagination>li>a, .pagination>li>span {
+                    position: relative;
+                    float: left;
+                    padding: 6px 12px;
+                    margin-left: -1px;
+                    line-height: 1.42857143;
+                    color: #337ab7;
+                    text-decoration: none;
+                    background-color: #fff;
+                    border: 1px solid #ddd;
+                }
+                .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+                    z-index: 3;
+                    color: #fff;
+                    cursor: default;
+                    background-color: #337ab7;
+                    border-color: #337ab7;
+                }
+            </style>
+        </div>
+    </div>
+</block>
+
+<block name="js">
+    <script type="text/javascript" src="__JS__/linksList.js"></script>
+</block>

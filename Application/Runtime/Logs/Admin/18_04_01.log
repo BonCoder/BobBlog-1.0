@@ -1,0 +1,780 @@
+[ 2018-04-01T12:16:28+08:00 ] 171.221.104.215 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000106s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000074s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000063s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000119s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+NOTIC: [8] Undefined variable: error /alidata/www/blog/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001390s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000065s ]
+
+[ 2018-04-01T12:16:30+08:00 ] 171.221.104.215 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000080s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000070s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000054s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000096s ]
+NOTIC: [2] Declaration of Admin\Model\UserModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/UserModel.class.php 第 14 行.
+NOTIC: [2] Declaration of Admin\Model\UserModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/UserModel.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined index: validate /alidata/www/blog/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /alidata/www/blog/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: SELECT `id`,`name`,`password`,`salt`,`status` FROM `user` WHERE `name` = 'admin' LIMIT 1   [ RunTime:0.0014s ]
+SQL: UPDATE `user` SET `last_time`='2018-04-01 12:16:29',`last_ip`='171.221.104.215' WHERE `id` = 1 [ RunTime:0.0470s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0019s ]
+SQL: SELECT `username`,`logo_url` FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` LIMIT 1   [ RunTime:0.1001s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0891s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0910s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.1235s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now())-1 ) LIMIT 1   [ RunTime:0.1264s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0996s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE (  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( created_at, '%Y%m' ) ) =1 ) LIMIT 1   [ RunTime:0.1216s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0021s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\FriendModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\FriendModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=-1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( YEARWEEK(date_format(createTime,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( date_format(createTime,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `system_info` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `system_info` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT `id`,`title`,`created_at` FROM `post` ORDER BY created_at desc LIMIT 7   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006438s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006495s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2018-04-01T12:16:33+08:00 ] 171.221.104.215 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000108s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000077s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000065s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000107s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` LIMIT 1   [ RunTime:0.1024s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0874s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0857s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.1180s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now())-1 ) LIMIT 1   [ RunTime:0.1253s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0985s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE (  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( created_at, '%Y%m' ) ) =1 ) LIMIT 1   [ RunTime:0.1153s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0013s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [2] Declaration of Admin\Model\FriendModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\FriendModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( YEARWEEK(date_format(createTime,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( date_format(createTime,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `system_info` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system_info` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`created_at` FROM `post` ORDER BY created_at desc LIMIT 7   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006410s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006452s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000063s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000101s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000078s ]
+
+[ 2018-04-01T12:50:39+08:00 ] 171.221.104.215 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000078s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000062s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000105s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` LIMIT 1   [ RunTime:0.1022s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0878s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0879s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.1209s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now())-1 ) LIMIT 1   [ RunTime:0.1223s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0977s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE (  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( created_at, '%Y%m' ) ) =1 ) LIMIT 1   [ RunTime:0.1164s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0019s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0019s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\FriendModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\FriendModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=0 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=-1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( YEARWEEK(date_format(createTime,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( date_format(createTime,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `system_info` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `system_info` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title`,`created_at` FROM `post` ORDER BY created_at desc LIMIT 7   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000180s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008181s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000104s ]
+
+[ 2018-04-01T14:47:43+08:00 ] 171.221.104.215 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000080s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000143s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` LIMIT 1   [ RunTime:0.1007s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0881s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0858s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.1162s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now())-1 ) LIMIT 1   [ RunTime:0.1212s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0934s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE (  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( created_at, '%Y%m' ) ) =1 ) LIMIT 1   [ RunTime:0.1150s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0019s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0018s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0015s ]
+NOTIC: [2] Declaration of Admin\Model\FriendModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\FriendModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( YEARWEEK(date_format(createTime,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( date_format(createTime,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `system_info` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `system_info` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `id`,`title`,`created_at` FROM `post` ORDER BY created_at desc LIMIT 7   [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006444s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006485s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000099s ]
+
+[ 2018-04-01T15:45:32+08:00 ] 171.221.104.215 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000074s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000065s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000120s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` LIMIT 1   [ RunTime:0.0948s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0857s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0871s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.1174s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now())-1 ) LIMIT 1   [ RunTime:0.1183s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0953s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE (  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( created_at, '%Y%m' ) ) =1 ) LIMIT 1   [ RunTime:0.1130s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\FriendModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\FriendModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=0 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( YEARWEEK(date_format(createTime,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( date_format(createTime,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `system_info` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system_info` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`created_at` FROM `post` ORDER BY created_at desc LIMIT 7   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006441s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006484s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000077s ]
+
+[ 2018-04-01T18:41:51+08:00 ] 171.221.104.215 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000077s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000065s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000110s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` LIMIT 1   [ RunTime:0.1009s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0898s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0904s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.1279s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now())-1 ) LIMIT 1   [ RunTime:0.1532s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.1947s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE (  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( created_at, '%Y%m' ) ) =1 ) LIMIT 1   [ RunTime:0.2258s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0013s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0013s ]
+NOTIC: [2] Declaration of Admin\Model\FriendModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\FriendModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=0 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=-1 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( YEARWEEK(date_format(createTime,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( date_format(createTime,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `system_info` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `system_info` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`created_at` FROM `post` ORDER BY created_at desc LIMIT 7   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006483s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006525s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000071s ]
+
+[ 2018-04-01T20:51:07+08:00 ] 171.221.104.215 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000101s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000064s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000104s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+NOTIC: [8] Undefined variable: error /alidata/www/blog/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000065s ]
+
+[ 2018-04-01T20:51:09+08:00 ] 171.221.104.215 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000066s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000052s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000093s ]
+NOTIC: [2] Declaration of Admin\Model\UserModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/UserModel.class.php 第 14 行.
+NOTIC: [2] Declaration of Admin\Model\UserModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/UserModel.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0019s ]
+NOTIC: [8] Undefined index: validate /alidata/www/blog/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /alidata/www/blog/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: SELECT `id`,`name`,`password`,`salt`,`status` FROM `user` WHERE `name` = 'admin' LIMIT 1   [ RunTime:0.0016s ]
+SQL: UPDATE `user` SET `last_time`='2018-04-01 20:51:08',`last_ip`='171.221.104.215' WHERE `id` = 1 [ RunTime:0.0118s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0017s ]
+SQL: SELECT `username`,`logo_url` FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` LIMIT 1   [ RunTime:0.1010s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0894s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0879s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.1188s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now())-1 ) LIMIT 1   [ RunTime:0.1208s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.1003s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE (  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( created_at, '%Y%m' ) ) =1 ) LIMIT 1   [ RunTime:0.1161s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\FriendModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\FriendModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=0 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( YEARWEEK(date_format(createTime,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( date_format(createTime,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `system_info` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `system_info` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `id`,`title`,`created_at` FROM `post` ORDER BY created_at desc LIMIT 7   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006497s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000064s ]
+
+[ 2018-04-01T20:51:12+08:00 ] 171.221.104.215 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000074s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000062s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000103s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0019s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` LIMIT 1   [ RunTime:0.1011s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0884s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0922s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.1228s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now())-1 ) LIMIT 1   [ RunTime:0.1163s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0950s ]
+SQL: SELECT COUNT(distinct(ip)) AS tp_count FROM `visit_log` WHERE (  PERIOD_DIFF( date_format( now( ) , '%Y%m' ) , date_format( created_at, '%Y%m' ) ) =1 ) LIMIT 1   [ RunTime:0.1130s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0015s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_category` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=0 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( DATEDIFF(created_at,NOW())=-1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( YEARWEEK(date_format(created_at,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `post_tab` WHERE ( date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0015s ]
+NOTIC: [2] Declaration of Admin\Model\FriendModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\FriendModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/FriendModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=0 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( DATEDIFF(createTime,NOW())=-1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( YEARWEEK(date_format(createTime,'%Y-%m-%d')) = YEARWEEK(now()) ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `friend_line` WHERE ( date_format(createTime,'%Y-%m')=date_format(now(),'%Y-%m') ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `system_info` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `system_info` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title`,`created_at` FROM `post` ORDER BY created_at desc LIMIT 7   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+NOTIC: [8] Undefined index: title /alidata/www/blog/Application/Runtime/Cache/Admin/e4501fbd7646d0b0f9b0bf16a694cdbb.php 第 386 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006402s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000095s ]
+
+[ 2018-04-01T20:51:37+08:00 ] 171.221.104.215 /Admin/Post/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000111s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000060s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000100s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT p.*,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `title` LIKE '%%' ORDER BY p.id desc LIMIT 0,10   [ RunTime:0.0365s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007659s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000072s ]
+
+[ 2018-04-01T20:51:38+08:00 ] 171.221.104.215 /Admin/Post/create/id/143.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000068s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000048s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000086s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `post` WHERE ( id = 143 ) LIMIT 1   [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0019s ]
+SQL: SELECT `t_id` FROM `dim_post_tab` WHERE ( p_id=143 )  [ RunTime:0.0017s ]
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostCategoryModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostCategoryModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`name` FROM `post_category`  [ RunTime:0.0019s ]
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+NOTIC: [2] Declaration of Admin\Model\PostTabModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostTabModel.class.php 第 0 行.
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`tab_name` FROM `post_tab`  [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006856s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006922s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000067s ]
+
+[ 2018-04-01T20:51:49+08:00 ] 171.221.104.215 /Admin/Post/create.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000058s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000098s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0022s ]
+NOTIC: [8] Undefined index: validate /alidata/www/blog/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /alidata/www/blog/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: SELECT `user_id` FROM `post` WHERE `id` = 143 LIMIT 1   [ RunTime:0.0018s ]
+SQL: UPDATE `post` SET `title`='TCPDF错误:Unable to get the size of the image  —— PHP',`category_id`='23',`read_count`='18',`like_num`='0',`status`='1',`homepage`='1',`content`='&lt;p&gt;如果当你上传图片生成PDF文件时出现&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Unable to get the size of the image&lt;/code&gt;&lt;/pre&gt;&lt;div&gt;&lt;div&gt;&lt;span itemprop=&quot;upvoteCount&quot;&gt;这可能是由于通过&lt;a href=&quot;http://php.net/manual/en/wrappers.http.php&quot; rel=&quot;noreferrer&quot; style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;HTTP包装器&lt;/a&gt;&lt;a href=&quot;http://php.net/manual/en/function.filesize.php&quot; rel=&quot;noreferrer&quot; style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&lt;code&gt;filesize()&lt;/code&gt;&lt;/a&gt;失败&lt;a href=&quot;http://php.net/manual/en/function.stat.php&quot; rel=&quot;noreferrer&quot; style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&lt;code&gt;stat()&lt;/code&gt;&lt;/a&gt;了远程图像文件（因为包装器不支持它）。&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div itemprop=&quot;text&quot;&gt;&lt;p&gt;&lt;a href=&quot;http://php.net/manual/en/wrappers.http.php&quot; rel=&quot;noreferrer&quot;&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;根据&lt;a href=&quot;http://www.tcpdf.org/doc/code/classTCPDF.html#a714c2bee7d6b39d4d6d304540c761352&quot; rel=&quot;noreferrer&quot;&gt;TCPDF image（）方法文档，&lt;/a&gt;您可以直接传递图像数据，&lt;a href=&quot;http://www.tcpdf.org/doc/code/classTCPDF.html#a714c2bee7d6b39d4d6d304540c761352&quot; rel=&quot;noreferrer&quot;&gt;方法&lt;/a&gt;是在其中添加一个&lt;code&gt;@&lt;/code&gt;符号。所以你可以得到原始的图像数据，然后像下面这样传递给TCPDF：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+
+require \'./tcpdf/tcpdf.php\';
+
+$pdf = new TCPDF();
+
+$pdf-&amp;gt;AddPage();
+
+foreach ($filesUrl as $pic_url) {
+    $img = file_get_contents(\'http://\'.$_SERVER[\'HTTP_HOST\'].$pic_url);
+   $pdf-&amp;gt;Image(\'@\' .$img, \'\', \'\', \' \', \' \', \'\', \'\', \'N\', false, 300, \'C\', false, false, 1, false, false, true);
+ }
+$pdf-&amp;gt;Output();
+
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;这样就能成功的获取到图片的大小了。&lt;/p&gt;&lt;p&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;font color=&quot;#c24f4a&quot;&gt;_________________________________________________________________________________________________&lt;/font&gt;&lt;/phelvetica&gt;&lt;/pexo&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;font color=&quot;#4d80bf&quot;&gt;♥网友可随意转载，但请保留作者源地址。&lt;/font&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;font color=&quot;#4d80bf&quot;&gt;♥如果本文对你有一点的帮助，希望不要吝惜你的一点回报，点击【赏】或者分享来给本人鼓励和支持，并帮到更多的人。&lt;/font&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;font color=&quot;#4d80bf&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;pexo 2\',=&quot;&quot; \'trebuchet=&quot;&quot; ms\',=&quot;&quot; helvetica,=&quot;&quot; arial,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; \'hiragino=&quot;&quot; sans=&quot;&quot; gb\',=&quot;&quot; \'stheiti=&quot;&quot; light\',=&quot;&quot; \'microsoft=&quot;&quot; yahei\',=&quot;&quot; simhei,=&quot;&quot; \'wenquanyi=&quot;&quot; micro=&quot;&quot; hei\',=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 15px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;&lt;phelvetica neue\',=&quot;&quot; helvetica,=&quot;&quot; \'pingfang=&quot;&quot; sc\',=&quot;&quot; 微软雅黑,=&quot;&quot; tahoma,=&quot;&quot; arial,=&quot;&quot; sans-serif;=&quot;&quot; font-size:=&quot;&quot; 14px;=&quot;&quot; font-style:=&quot;&quot; normal;=&quot;&quot; font-variant:=&quot;&quot; font-weight:=&quot;&quot; letter-spacing:=&quot;&quot; orphans:=&quot;&quot; auto;=&quot;&quot; text-align:=&quot;&quot; start;=&quot;&quot; text-indent:=&quot;&quot; 0px;=&quot;&quot; text-transform:=&quot;&quot; none;=&quot;&quot; white-space:=&quot;&quot; widows:=&quot;&quot; 1;=&quot;&quot; word-spacing:=&quot;&quot; -webkit-text-stroke-width:=&quot;&quot; background-color:=&quot;&quot; rgb(255,=&quot;&quot; 255,=&quot;&quot; 255);&quot;=&quot;&quot;&gt;♥如果喜欢本人的作品，可以留言，希望为大家奉献更多的优秀经验&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/phelvetica&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&lt;/pexo&gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;',`updated_at`='2018-04-01 20:51:49' WHERE `id` = 143 [ RunTime:0.0413s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `dim_post_tab` WHERE ( p_id=143 )  [ RunTime:0.0018s ]
+SQL: DELETE FROM `dim_post_tab` WHERE ( p_id=143 ) [ RunTime:0.0068s ]
+SQL: INSERT INTO `dim_post_tab` (`p_id`,`t_id`) VALUES ('143','3') [ RunTime:0.0045s ]
+NOTIC: [8] Undefined variable: errorMsg /alidata/www/blog/Application/Admin/Controller/PostController.class.php 第 58 行.
+
+[ 2018-04-01T20:51:49+08:00 ] 171.221.104.215 /Admin/Post/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000079s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000055s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000100s ]
+NOTIC: [2] Declaration of Admin\Model\PostModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+NOTIC: [2] Declaration of Admin\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) /alidata/www/blog/Application/Admin/Model/PostModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT p.*,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `title` LIKE '%%' ORDER BY p.id desc LIMIT 0,10   [ RunTime:0.0337s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006988s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007036s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000058s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000078s ]
+

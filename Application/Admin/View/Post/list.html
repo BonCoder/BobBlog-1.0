@@ -1,0 +1,146 @@
+<extend name="Layouts/main"/>
+
+<block name="content-wrapper">
+    <script type="text/javascript" src="__STATIC__/layui2/layui.js"></script>
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                文章管理
+                <small>文章列表</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="javascript:;"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active">文章管理</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <div class="childrenBody">
+            <blockquote class="layui-elem-quote news_search">
+                <form action="{:U()}" method="get">
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" value="{$keyword}" name="name" placeholder="请输入关键字" class="layui-input search_input">
+                    </div>
+                    <button type="submit" class="layui-btn search_btn">
+                        <span class="glyphicon glyphicon-search"></span> 搜索
+                    </button>
+                </div>
+                </form>
+                <br>
+                <div class="layui-inline">
+                    <a href="{:U('Post/create')}" class="layui-btn layui-btn-normal newsAdd_btn">添加文章</a>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn recommend js-push-baidu" style="background-color:#5FB878">百度推送</a>
+                    <!--<form id="js-push-form" method="post" action="{:U('Post/postPushBaiDu')}"-->
+                          <!--style="display: none">-->
+                        <!--<input type="text" name="id" value="">-->
+                    <!--</form>-->
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn recommend js-push-xzh" style="background-color:#5FB878">熊掌号推送</a>
+                    <!--<form id="js-push-form" method="post" action="{:U('Post/postPushBaiDu')}"-->
+                    <!--style="display: none">-->
+                    <!--<input type="text" name="id" value="">-->
+                    <!--</form>-->
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-danger batchDel js-delete">批量删除</a>
+                    <form id="js-delete-form" method="post" action="{:U('Post/delete')}"
+                          style="display: none">
+                        <input type="text" name="id" value="">
+                    </form>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-form-mid layui-word-aux">本页面刷新后除新添加的文章外所有操作无效，关闭页面所有数据重置</div>
+                </div>
+            </blockquote>
+            <div class="layui-form news_list">
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="50">
+                        <col width="25%">
+                        <col width="9%">
+                        <col width="9%">
+                        <col width="6%">
+                        <col width="6%">
+                        <col width="6%">
+                        <col width="6%">
+                        <col width="6%">
+                        <col width="12%">
+                        <col width="15%">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox" name="" lay-skin="primary" class="js-select-all" lay-filter="allChoose" id="allChoose"></th>
+                        <th style="text-align:left;">文章标题</th>
+                        <th>发布人</th>
+                        <th>分类</th>
+                        <th>浏览次数</th>
+                        <th>点赞次数</th>
+                        <th>推送次数</th>
+                        <th>是否展示</th>
+                        <th>首页显示</th>
+                        <th>发布时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="">
+                    <foreach name="posts" item="post">
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose" class="ids" value="{$post.id}">
+                                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
+                            </td>
+                            <td align="left">{$post.title}</td>
+                            <td>{$post.author}</td>
+                            <td>{$post.category_name}</td>
+                            <td align="center">{$post.read_count}</td>
+                            <td align="center">{$post.like_num}</td>
+                            <td align="center">{$post.pushs}</td>
+                            <td>
+                                <if condition="$post.status eq 1 ">
+                                    <input type="checkbox" name="show" lay-skin="switch" value="{$post.id}" class="status" lay-text="是|否" lay-filter="isShow" checked>
+                                    <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>是</em><i></i></div>
+                                    <else />
+                                    <input type="checkbox" name="show" lay-skin="switch" value="{$post.id}" class="status" lay-text="是|否" lay-filter="isShow">
+                                    <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div>
+                                </if>
+                            </td>
+                            <td>
+                                <if condition="$post.homepage eq 1 ">
+                                    <input type="checkbox" name="show" lay-skin="switch" value="{$post.id}" class="homepage" lay-text="是|否" lay-filter="switchTest" checked>
+                                    <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>是</em><i></i></div>
+                                    <else />
+                                    <input type="checkbox" name="show" lay-skin="switch" value="{$post.id}" class="homepage" lay-text="是|否" lay-filter="switchTest">
+                                    <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div>
+                                </if>
+                            </td>
+                            <td>{$post.created_at}</td>
+                            <td>
+                                <a href="{:U('Post/create', array('id'=>$post['id']))}" class="layui-btn layui-btn-mini "><i class="iconfont icon-edit">&#xe631;</i> 编辑</a>
+                                <a href="{:U('Home/Post/detail',array('id'=>$post['id']))}" class="layui-btn layui-btn-normal layui-btn-mini news_collect" target="view_window"> <i class="layui-icon">&#xe615;</i> 查看</a>
+                                <a data-id="{$post.id}" class="js-delete-one layui-btn layui-btn-danger layui-btn-mini news_del" data-id="1" target="_Blank"><i class="layui-icon"></i> 删除</a>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+            </div>
+            <div id="page">
+                <!--分页-->
+                <div class="box-tools pull-right">
+                    <ul class="pagination inline">
+                        {$pagination}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="js">
+    <script type="text/javascript" src="__JS__/newsList.js"></script>
+</block>

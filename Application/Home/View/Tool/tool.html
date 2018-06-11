@@ -1,0 +1,69 @@
+<extend name="Layouts/main"/>
+<block name="css">
+    <link rel="stylesheet" href="__STATIC__/share/dist/css/share.min.css">
+    <link rel="stylesheet" href="__STATIC__/share/demo/life.css">
+    <link rel="stylesheet" href="__STATIC__/share/default.css">
+</block>
+<block name="content">
+    <div class="col-md-9" style="margin-top: 65px">
+    <article class="blog-post-block blog-post-page-content">
+        <section class="blog-links-page">
+            <h3 id="左邻右舍"><a href="#左邻右舍" class="headerlink" title="左邻右舍" target="_blank"></a>左邻右舍</h3>
+            <div class="links-block row" style="margin-top: -50px;"><br>
+                <foreach name="link" item="line">
+                    <div class="col-md-3 col-sm-4 col-xs-6 links-block-div">
+                        <a href="{$line.line_url}" target="_blank" rel="external" class="links-block-btn btn1 btn-outline-info btn-block">{$line.line_name}</a>
+                    </div>
+                </foreach>
+            </div>
+            <h3 id="网站收藏"><a href="#网站收藏" class="headerlink" title="网站收藏" target="_blank"></a>网站收藏</h3>
+            <div class="links-block row" style="margin-top: -50px;"><br>
+                <div class="col-md-3 links-block-div"><a href="{:U('Tool/qrcode')}" target="_blank" rel="external"
+                                                         class="links-block-btn btn1 btn-outline-info btn-block">二维码生成</a>
+                </div>
+                <div class="col-md-3 links-block-div"><a href="http://music.bobcoder.cc/" target="_blank" rel="external"
+                                                         class="links-block-btn btn1 btn-outline-info btn-block">Online Music Player</a>
+                </div>
+                <div class="col-md-3 links-block-div"><a href="http://movie.bobcoder.cc/" target="_blank" rel="external"
+                                                         class="links-block-btn btn1 btn-outline-info btn-block">VIP视频解析</a>
+                </div>
+                <div class="col-md-3 links-block-div"><a href="http://www.52pojie.cn/" target="_blank" rel="external"
+                                                         class="links-block-btn btn1 btn-outline-info btn-block">吾爱破解</a>
+                </div>
+                <div class="col-md-3 links-block-div"><a href="http://movie.bobcoder.cc/" target="_blank" rel="external"
+                                                         class="links-block-btn btn1 btn-outline-info btn-block">VIP电影在线看</a>
+                </div>
+                <div class="col-md-3 links-block-div"><a href="http://www.mmjpg.com/" target="_blank" rel="external"
+                                                         class="links-block-btn btn1 btn-outline-info btn-block">妹子网</a>
+                </div>
+                <div class="col-md-3 links-block-div"><a href="http://doutu.bobcoder.cc/" target="_blank" rel="external"
+                                                         class="links-block-btn btn1 btn-outline-info btn-block">斗图神器</a>
+                </div>
+                <div class="col-md-3 links-block-div"><a href="http://tools.jb51.net/#home" target="_blank" rel="external"
+                                                         class="links-block-btn btn1 btn-outline-info btn-block">脚本之家在线工具</a>
+                </div>
+
+            </div>
+            <h5 id="友链交换"><a href="#友链交换" class="headerlink" title="友链交换" target="_blank"></a>友链交换</h5>
+            <p>请先在贵站加好本站友链，然后发邮件给我你的网站信息；</p>
+            <ul>
+                <li>只接受IT行业的博客、资讯网站和学习笔记，以及原创小说、心灵鸡汤类网站；</li>
+                <li>以上但不包括广告满屏的网站和交易类网站；</li>
+                <li>原创内容优先；</li>
+                <li>建站时间不得小于3个月；</li>
+                <li>文章数不得少于5篇且经常更新；</li>
+            </ul>
+            <p>邮箱：bob@bobcoder.cc / 44785355@qq.com</p>
+            <p>请注意：我会经常访问贵站查看本站链接是否存在于贵站，如果不存在本站也会删除贵站的链接；</p>
+            <h5 id="本站信息"><a href="#本站信息" class="headerlink" title="本站信息" target="_blank"></a>本站信息</h5>
+            <p>站名：Bob`S BLOG<br>链接：<a href="https://www.bobcoder.cc" target="_blank">https://www.bobcoder.cc</a><br>头像：<a
+                    href="http://www.bobcoder.cc/Public/Home/images/logo3.png" target="_blank"
+                    rel="external">http://www.bobcoder.cc/Public/Home/images/logo3.png</a><br>描述：走过路过不要错过，都来看一看了！</p>
+            <p>（欢迎大家前来捧场）</p>
+
+
+        </section>
+    </article>
+    </div>
+
+</block>

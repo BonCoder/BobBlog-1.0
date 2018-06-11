@@ -1,0 +1,84 @@
+<extend name="Layouts/main"/>
+
+<block name="content-wrapper">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                {$meta_title}
+                <small>填写管理员信息</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="{:U('User/lists')}">系统管理</a></li>
+                <li class="active">{$meta_title}</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="box box-primary">
+                <form role="form" action="{:U('User/create')}" method="post">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="inputName">账号</label>
+                            <input type="text" name="name" class="form-control" id="inputName" value="{$name}">
+                            <p class="help-block">请输入账号名称，字数在2－20之间，编辑时不可更改</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputNickname">昵称</label>
+                            <input type="text" name="nickname" class="form-control" id="inputNickname"
+                                   value="{$nickname}">
+                            <p class="help-block">请输入昵称，字数在2－20之间</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPwd">密码</label>
+                            <input type="password" name="password" class="form-control" id="inputPwd" value="">
+                            <p class="help-block">字数在6－20之间，不能是纯数字或纯英文，不能有特殊符号</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputRePwd">确认密码</label>
+                            <input type="password" name="repassword" class="form-control" id="inputRePwd" value="">
+                            <p class="help-block">字数在6－20之间，不能是纯数字或纯英文，不能有特殊符号</p>
+                        </div>
+
+                        <div class="box-footer">
+                            <input type="hidden" name="id" value="{$id}"/>
+                            <button type="submit" class="btn btn-primary">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</block>
+
+<block name="js">
+    <script>
+        // 错误提示信息
+        if ('{$Think.cookie.errors}' != '') {
+            var errors = '{$Think.cookie.errors}';
+            errors = JSON.parse(errors);
+            if ('name' in errors) {
+                $('#inputName').parent().addClass('has-error');
+                $('#inputName').next().html(errors.name);
+            }
+            if ('nickname' in errors) {
+                $('#inputNickname').parent().addClass('has-error');
+                $('#inputNickname').next().html(errors.nickname);
+            }
+            if ('password' in errors) {
+                $('#inputPwd').parent().addClass('has-error');
+                $('#inputPwd').next().html(errors.password);
+            }
+            if ('repassword' in errors) {
+                $('#inputRePwd').parent().addClass('has-error');
+                $('#inputRePwd').next().html(errors.repassword);
+            }
+        }
+
+        //回显时账号不可编辑
+        var id = $("input[name='id']").val();
+        if (id !== '') {
+            $("#inputName").attr('disabled', 'disabled');
+        }
+    </script>
+</block>

@@ -1,0 +1,125 @@
+<extend name="Layouts/main"/>
+<block name="css">
+    <link rel="stylesheet" href="__STATIC__/highlight/styles/agate.css">
+    <style>
+        .w-e-text pre code {  background: #333;}
+    </style>
+</block>
+<block name="billboard">
+    <section class="billboard" style="margin-top: 61px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="intro animate fadeIn">
+                        <p class="lead"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</block>
+<block name="content">
+    <div class="col-md-9">
+        <foreach name="posts" item="post">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="post-title">
+                        <a href="{:U('Post/detail',array('id'=>$post['id']))}" title="{$post.title}" target="_blank">{$post.title}</a>
+                    </h3>
+                    <div class="post-meta">
+                        <span class="ion-calendar">
+                            <span class="post-meta-color"> <php>echo
+                                date("Y-m-d",strtotime($post['created_at']));
+                            </php></span>&emsp;
+                        </span>
+                        <a href="javascript:;" style="color:#777" class="ion-heart"
+                           onclick="likeNum('{$post.id}', $(this))">
+                            <span class="post-meta-color"> {$post.like_num}</span>&emsp;
+                        </a>
+                        <span class="ion-eye">
+                            <span class="post-meta-color"> {$post.read_count}</span>&emsp;
+                        </span>
+                        <span class="ion-ios-pricetags-outline">
+                            <span class="post-meta-color"> {$post.category_name} </span>&emsp;
+                        </span>
+                    </div>
+                    <div class="post-content w-e-text " style="height:350px">
+                        {$post.content|htmlspecialchars_decode}
+                    </div>
+
+                    <div class="post-content more">
+                        <a href="{:U('Post/detail',array('id'=>$post['id']))}" target="_blank">
+                            阅读全文
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </foreach>
+
+        <!--分页-->
+        <div style="text-align: right">
+            <ul class="pagination inline">
+                {$pagination}
+            </ul>
+        </div>
+
+        <!--返回顶部-->
+        <div id="elevator_item">
+            <a id="elevator" onclick="return false;" title="回到顶部"></a>
+            <a class="qr"></a>
+            <div class="qr-popup">
+                <a class="code-link"><img class="code" src="__IMG__/wx.jpg"/></a>
+                <span>加作者为微信好友</span>
+                <div class="arr"></div>
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="js">
+    <script src="__STATIC__/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        document.styleSheets[0].addRule('.line', 'width: 720px');
+        // 点赞，
+        function likeNum(id, that) {
+            var currentThis = that;
+            $.ajax({
+                url: "{:U('Post/like')}",
+                type: "post",
+                data: {'id': id},
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == 200) {
+                        currentThis.css('color', '#53d572');
+                        currentThis.children('span').html(data.like_num);
+                    }
+                },
+                error: function () {
+                    //todo
+                }
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(function() {
+            $(window).scroll(function(){
+                var scrolltop=$(this).scrollTop();
+                if(scrolltop>=200){
+                    $("#elevator_item").show();
+                }else{
+                    $("#elevator_item").hide();
+                }
+            });
+            $("#elevator").click(function(){
+                $("html,body").animate({scrollTop: 0}, 500);
+            });
+            $(".qr").hover(function(){
+                $(".qr-popup").show();
+            },function(){
+                $(".qr-popup").hide();
+            });
+        });
+    </script>
+</block>

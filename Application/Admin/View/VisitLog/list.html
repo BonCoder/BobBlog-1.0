@@ -1,0 +1,145 @@
+<extend name="Layouts/main"/>
+<block name="css">
+</block>
+<block name="content-wrapper">
+    <script type="text/javascript" src="__STATIC__/layui/layui.js"></script>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                访问记录
+                <small>访问列表</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="javascript:;"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active">访问记录</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <div class="childrenBody">
+            <blockquote class="layui-elem-quote news_search">
+                <form action="{:U()}"method="get">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width: 100px;margin-left: -30px;">关键字</label>
+                        <div class="layui-input-inline">
+                            <input type="text" value="{$name}" name="name"  id="name"  placeholder="请输入关键字" class="layui-input search_input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width: 100px;">日期范围</label>
+                        <div class="layui-input-inline">
+                            <input type="text" class="layui-input" value="{$minDate}" id="test1" name="minDate"  placeholder="开始日期">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" class="layui-input" value="{$maxDate}" id="test2" name="maxDate" placeholder="结束日期">
+                        </div>
+                    </div>
+                    <button type="submit" class="layui-btn search_btn" style="margin-left: 5px;padding-left: 10px;">
+                        <i class="layui-icon">&#xe615;</i> 搜索
+                    </button>
+                    <button type="reset" class="layui-btn layui-btn-warm btn-reset" style="margin-left: 5px;padding-left: 10px;">
+                        <i class="layui-icon">&#x1006;</i> 清空
+                    </button>
+                </form>
+
+                <br>
+
+                <div class="layui-inline">
+                    <a class="js-delete layui-btn layui-btn-danger batchDel">批量删除</a>
+                    <form id="js-delete-form" method="post" action="{:U('VisitLog/delete')}"
+                          style="display: none">
+                        <input type="text" name="id" value="">
+                    </form>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-form-mid layui-word-aux">本页面刷新后除新添加的链接外所有操作无效，关闭页面所有数据重置</div>
+                </div>
+            </blockquote>
+            <span style="margin-left: 20px">
+                                访问量:&emsp;
+                今日 <span style="color:#dd4b39">
+                                   <span style="font-size: 20px;color: #9B410E">{$visitUsers.today}</span>
+                                </span>&emsp;
+                昨日 <span style="color:#dd4b39">
+                                   <span style="font-size: 20px;color: #9B410E">{$visitUsers.yearsday}</span>
+                                </span>&emsp;
+                本周 <span style="color:#dd4b39">
+                                    <span style="font-size: 20px;color: #9B410E">{$visitUsers.toweekday}</span>
+                                </span>&emsp;
+                上周 <span style="color:#dd4b39">
+                                    <span style="font-size: 20px;color: #9B410E">{$visitUsers.yearsweek}</span>
+                                </span>&emsp;
+                本月 <span style="color:#dd4b39">
+                                    <span style="font-size: 20px;color: #9B410E">{$visitUsers.tomonth}</span>
+                                 </span>&emsp;
+                上月 <span style="color:#dd4b39">
+                                <span style="font-size: 20px;color: #9B410E">{$visitUsers.yearsmonth}</span>
+                                 </span>&emsp;
+                            </span>
+            <div class="layui-form links_list">
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="50">
+                        <col width="8%">
+                        <col width="12%">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col width="13%">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox" name="" class="js-select-all" lay-skin="primary" lay-filter="allChoose" id="allChoose"></th>
+                        <th style="text-align:left;">姓名</th>
+                        <th>IP</th>
+                        <th>城市</th>
+                        <th>物理地址</th>
+                        <th>浏览地址</th>
+                        <th>访问时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="">
+                    <foreach name="visitLogs" item="visitLog">
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose" class="ids" value="{$visitLog.id}">
+                                <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
+                            </td>
+                            <td>{$visitLog.name}</td>
+                            <td align="left">{$visitLog.ip}</td>
+                            <td>{$visitLog.address}</td>
+                            <td>{$visitLog.area}</td>
+                            <td><a style="color:#1E9FFF;" target="_blank" href="{$visitLog.url}">{$visitLog.url}</a></td>
+                            <td>{$visitLog.created_at}</td>
+                            <td>
+                                <!--<a class="layui-btn layui-btn-mini links_edit"><i class="iconfont icon-edit"></i> 编辑</a>-->
+                                <a data-id="{$visitLog.id}" class="js-delete-one layui-btn layui-btn-danger layui-btn-mini links_del" data-id="1">
+                                    <i class="layui-icon"></i> 删除</a>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+                <div class="box-tools pull-right">
+                    <ul class="pagination inline">
+                        {$pagination}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>
+
+<block name="js">
+    <script type="text/javascript" src="__JS__/visitList.js"></script>
+    <script>
+        $(".btn-reset").click(function(){
+            $("#name").val("");
+            alert( $("#name").val());
+
+        })
+    </script>
+</block>

@@ -1,0 +1,55 @@
+User-agent: Baiduspider
+Disallow: /admin
+Disallow: /download/
+Disallow: /test/
+Disallow: /layui/
+Disallow: /ueditor/
+Disallow: /Public/
+
+User-agent: Googlebot
+Disallow: /admin
+Disallow: /download/
+Disallow: /test/
+Disallow: /layui/
+Disallow: /ueditor/
+Disallow: /Public/
+
+User-agent: Yahoo! Slurp China
+Disallow: /admin
+Disallow: /download/
+Disallow: /test/
+Disallow: /layui/
+Disallow: /ueditor/
+Disallow: /Public/
+
+User-agent: YoudaoBot
+Disallow: /admin
+Disallow: /download/
+Disallow: /test/
+Disallow: /layui/
+Disallow: /ueditor/
+Disallow: /Public/
+
+User-agent: Sosospider
+Disallow: /admin
+Disallow: /download/
+Disallow: /test/
+Disallow: /layui/
+Disallow: /ueditor/
+Disallow: /Public/
+
+User-agent: Sogou spider
+Disallow: /admin
+Disallow: /download/
+Disallow: /test/
+Disallow: /layui/
+Disallow: /ueditor/
+Disallow: /Public/
+
+User-agent: Sogou web spider
+Disallow: /admin
+Disallow: /download/
+Disallow: /test/
+Disallow: /layui/
+Disallow: /ueditor/
+Disallow: /Public/

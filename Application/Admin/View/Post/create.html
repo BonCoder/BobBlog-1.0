@@ -1,0 +1,298 @@
+<extend name="Layouts/main"/>
+
+<block name="content-wrapper">
+    <style>
+     .layui-layedit{ width: 800px;}
+     #inputTitle{ width: 500px;}
+     #inputCategory{ width: 100px;}
+     #inputTags{ width: 300px;}
+    </style>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                {$meta_title}
+                <small>填写文章信息</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="{:U('Post/lists')}">文章管理</a></li>
+                <li class="active">{$meta_title}</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="box box-primary">
+                <form role="form" action="{:U('Post/create')}" id="js-post-submit" method="post">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="inputTitle">标题</label>
+                            <input type="text" name="title" class="form-control" id="inputTitle" value="{$title}">
+                            <p class="help-block">请输入标题，字数在2－20之间</p>
+                        </div>
+                        <!--<div class="form-group">-->
+                        <!--<label for="inputAuthor">作者</label>-->
+                        <!--<input type="text" name="author" class="form-control " id="inputAuthor" value="{$author}">-->
+                        <!--<p class="help-block">请输入作者，字数在2－20之间</p>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <label for="inputCategory">文章分类</label>
+                            <select id="inputCategory" class="form-control" name="category_id">
+                                <foreach name="categories" item="category">
+                                    <if condition="$category.id eq $category_id">
+                                        <option value="{$category.id}" selected="selected">{$category.name}</option>
+                                        <else/>
+                                        <option value="{$category.id}">{$category.name}</option>
+                                    </if>
+                                </foreach>
+                            </select>
+                            <p class="help-block"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputTags">标签</label><br/>
+                            <select id="inputTags" class="form-control tags" name="tags[]" multiple="multiple">
+                                <foreach name="tabs" item="tabs">
+                                    <option value="{$tabs.id}">{$tabs.tab_name}</option>
+                                </foreach>
+                            </select>
+                                    <p class="help-block"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>阅读数</label>
+                            <div class="input-group">
+                                <div class="input-group">
+                                    <span class="input-group-btn read-count-dec">
+                                        <button type="button" class="btn btn-primary">-</button>
+                                    </span>
+                                    <input style="width: 100px; text-align: center;" type="text"
+                                           name="read_count" value="{$read_count}" class="form-control rate initialized"
+                                           placeholder="浏览数">
+                                    <span class="input-group-btn read-count-inc">
+                                        <button type="button" class="btn btn-success">+</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>点赞数</label>
+                            <div class="input-group">
+                                <div class="input-group">
+                                    <span class="input-group-btn like-num-dec">
+                                        <button type="button" class="btn btn-primary">-</button>
+                                    </span>
+                                    <input style="width: 100px; text-align: center;" type="text"
+                                           name="like_num" value="{$like_num}" class="form-control rate initialized"
+                                           placeholder="点赞数">
+                                    <span class="input-group-btn like-num-inc">
+                                        <button type="button" class="btn btn-success">+</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>状态</label>
+                            <div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="status" checked value="1">正常
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="status" value="0">禁用
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                        <div class="form-group">
+                            <label>首页显示</label>
+                            <div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="homepage" checked value="1">正常
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="homepage" value="0">禁用
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                        <div class="form-group">
+                            <lable for="ck-editor"><b>内容</b></lable>
+                            <div id="textarea-content">
+                                <textarea name="content" style="display: none" >
+                                </textarea>
+                                <div id="editor" style="width: 800px;">
+                                    {$content|htmlspecialchars_decode}
+                                </div>
+                            </div>
+                            <p class="help-block">请添加文章内容</p>
+                        </div>
+                    </div>
+
+                    <div class="box-footer">
+                        <input type="hidden" name="id" value="{$id}"/>
+                        <button class="layui-btn layui-btn-warm js-btn-submit">提交</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+    </div>
+</block>
+
+<block name="js">
+    <!--<script type="text/javascript" charset="utf-8" src="__STATIC__/ueditor/lang/zh-cn/zh-cn.js"></script>-->
+    <script type="text/javascript" charset="utf-8" src="__STATIC__/adminlte/plugins/select2/select2.full.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__STATIC__/layui/layui.js"></script>
+    <script src="__STATIC__/wangeditor/release/wangEditor.js"></script>
+    <script type="text/javascript">
+        var E = window.wangEditor;
+        var editor = new E('#editor');         // 或者 var editor = new E( document.getElementById('#editor') )
+        editor.customConfig.uploadImgServer = '/Admin/Post/uploadImg';
+        editor.customConfig.uploadFileName = 'upload';
+        editor.create();
+    </script>
+    <script>
+//        var face = [];
+//        for (var i=1;i<=15;i++){
+//            face.push("{src: '/Public/Admin/emj/line/"+i+".gif', alt: '["+i+"]'}")
+//        }
+//        alert(face.toString());
+        document.styleSheets[0].addRule('.line', 'width: 720px');
+        layui.use(['form','layedit','upload'], function(){
+            var layedit = layui.layedit
+                ,$ = layui.jquery;
+            layedit.set({
+                uploadImage: {
+                    url: '/Admin/Post/uploadImg' //接口url
+                    ,type: 'post' //默认post
+                }
+            });
+            $('.site-demo-layedit').on('click', function(){
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+            //自定义工具栏
+//            layedit.build('LAY_demo2', {
+//                tool: [
+//                    'strong' //加粗
+//                    ,'italic' //斜体
+//                    ,'underline' //下划线
+//                    ,'del' //删除线
+//                    ,'|' //分割线
+//                    ,'left' //左对齐
+//                    ,'center' //居中对齐
+//                    ,'right' //右对齐
+//                    ,'|' //分割线
+//                    ,'link' //超链接
+//                    ,'unlink' //清除链接
+//                    ,'face' //表情
+//                    ,'code' //代码
+//                    ,'image' //插入图片
+//                    ,'yulan' //预览
+//                ]
+//                ,height: 500
+//            })
+        });
+    </script>
+
+
+    <script>
+            // 提交表单
+         $(".js-btn-submit").click(function () {
+                var content = $(".w-e-text").html();
+                // 把content填充到form表单中
+                $("#js-post-submit textarea[name='content']").val(content);
+                // 提交表单
+                $("#js-post-submit").submit();
+            });
+
+
+        $("#inputTags").select2({
+            tags: true,
+            maximumSelectionLength: 5 //最多能够选择的个数
+        });
+        if('{$postTab}' != ''){
+            var tabarry = '{$postTab}'.split(',');
+            $('#inputTags').select2().val(tabarry).trigger('change');
+        }
+//        var ue = UE.getEditor('editor');
+//        CKEDITOR.replace('ck-editor',{extraPlugins: 'codesnippet',codeSnippet_theme: 'zenburn'});
+
+        // 错误提示信息
+        if ('{$Think.cookie.errors}' != '') {
+            var errors = '{$Think.cookie.errors}';
+            errors = JSON.parse(errors);
+            if ('title' in errors) {
+                $('#inputTitle').parent().addClass('has-error');
+                $('#inputTitle').next().html(errors.title);
+            }
+            if ('content' in errors) {
+                $('#textarea-content').parent().addClass('has-error');
+                $('#textarea-content').next().html(errors.content);
+            }
+        }
+
+        // 状态回显
+        if ('{$status}' != '') {
+            $("input[type='radio'][name='status']").each(function () {
+                if ($(this).val() == '{$status}') {
+                    $(this).attr("checked", "checked");
+                }
+            });
+        }
+
+        // 阅读数自增自减
+        $('.read-count-dec').click(function () {
+            var readNum = $("input[name='read_count']").val();
+            if (isNaN(readNum)) {
+                readNum = 0;
+            }
+            if (readNum > 1) {
+                readNum = parseInt(readNum) - 1;
+                $(this).next().val(readNum);
+            } else {
+                $(this).next().val(1);
+            }
+        });
+        $('.read-count-inc').click(function () {
+            var readNum = $("input[name='read_count']").val();
+            if (readNum==='') {
+                $(this).prev().val(1);
+            }else{
+                readNum = parseInt(readNum) + 1;
+                $(this).prev().val(readNum);
+            }
+        });
+
+        // 点选数自增自减
+        $('.like-num-dec').click(function () {
+            var likeNum = $(this).next().val();
+            if (isNaN(likeNum)) {
+                likeNum = 0;
+            }
+            if (likeNum > 1) {
+                likeNum = parseInt(likeNum) - 1;
+                $(this).next().val(likeNum);
+            } else {
+                $(this).next().val(1);
+            }
+        });
+        $('.like-num-inc').click(function () {
+            var likeNum = $(this).prev().val();
+            if (likeNum==='') {
+                $(this).prev().val(1);
+            }else{
+                likeNum = parseInt(likeNum) + 1;
+                $(this).prev().val(likeNum);
+            }
+        });
+
+    </script>
+</block>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>博客管理系统</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="Shortcut Icon" href="__IMG__/Bob.jpg">
+    <link rel="stylesheet" href="__STATIC__/adminlte/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="__STATIC__/ionicons/ionicons-2.0.1/css/ionicons.min.css">
+    <link  rel="stylesheet" href="__STATIC__/adminlte/plugins/select2/select2.css">
+    <link rel="stylesheet" href="__STATIC__/adminlte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="__STATIC__/adminlte/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="__CSS__/customs.css?1">
+    <link rel="stylesheet" href="__STATIC__/layui2/css/layui.css">
+    <link rel="stylesheet" href="__STATIC__/leaf/plugins/art-dialog/css/ui-dialog.css"/>
+    <link rel="stylesheet" href="__STATIC__/leaf/css/leaf.css"/>
+    <block name="css"></block>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <block name="main-header">
+        <header class="main-header">
+            <a href="" class="logo">
+                <span class="logo-mini">Blog</span>
+                <span class="logo-lg">Bob 的博客</span>
+            </a>
+
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">4</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 4 messages</li>
+                                <li>
+                                    <ul class="menu">
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="__STATIC__/adminlte/dist/img/user2-160x160.jpg"
+                                                     class="img-circle"
+                                                     alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Support Team
+                                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">10</span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 10 notifications</li>
+                                <li>
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown tasks-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-flag-o"></i>
+                                <span class="label label-danger">9</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 9 tasks</li>
+                                <li>
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="#">
+                                                <h3>
+                                                    Design some buttons
+                                                    <small class="pull-right">20%</small>
+                                                </h3>
+
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                         role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                         aria-valuemax="100">
+                                                        <span class="sr-only">20% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer">
+                                    <a href="#">View all tasks</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown user user-menu">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="{$Think.session.userInfo.logo_url}" class="user-image"
+                                     alt="User Image">
+                                <span class="hidden-xs">{$Think.session.userInfo.username}</span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="{$Think.session.userInfo.logo_url}"
+                                         class="img-circle"
+                                         alt="User Image">
+                                    <p>
+                                        {$Think.session.userInfo.username}
+                                        <small>2017年5月1日注册</small>
+                                    </p>
+                                </li>
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="{:U('User/updateUserInfo')}" class="btn btn-default btn-flat">个人信息</a>
+                                    </div>
+                                    <div class="pull-right">
+                                      <a href="{:U('Index/logout')}" class="btn btn-default btn-flat">注销</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </block>
+
+    <block name="main-sidebar">
+        <aside class="main-sidebar">
+
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="{$Think.session.userInfo.logo_url}" class="img-circle"
+                             alt="User Image">
+                    </div>
+
+                    <div class="pull-left info">
+                        <p>{$Think.session.userInfo.username}</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="搜索...">
+
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                                    class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+
+                <ul class="sidebar-menu">
+                    <li class="header"><b>主菜单</b></li>
+                    <li class="">
+                        <a href="{:U('Index/welcome')}"><i class="fa fa-dashboard"></i> <span>仪表盘</span></a>
+                    </li>
+                    <li class="treeview ">
+                        <a href="javascript:;"><i class="fa fa-tags"></i>
+                            <span>文章管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="{:U('Post/lists')}">文章列表</a>
+                            </li>
+                            <li>
+                                <a href="{:U('PostCategory/lists')}">文章分类</a>
+                            </li>
+                            <li>
+                                <a href="{:U('PostTab/lists')}">标签管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview ">
+                        <a href="javascript:;"><i class="fa  fa-spinner"></i>
+                            <span>访问记录</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="{:U('VisitLog/lists')}">访问列表</a>
+                            </li>
+                            <li>
+                                <a href="{:U('VisitLog/ipLists')}">IP屏蔽</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview ">
+                        <a href="javascript:;"><i class="fa fa-cog"></i>
+                            <span>系统管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="{:U('User/lists')}">管理员列表</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/systemParameter')}">系统基本参数</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="javascript:;"><i class="fa fa-dashboard"></i>
+                            <span>友情链接</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="{:U('Friend/lists')}">友情链接</a>
+                            </li>
+                            <li>
+                                <a href="{:U('Friend/examine')}">链接审核</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+    </block>
+
+    <block name="content-wrapper">
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    Page Header
+                    <small>Optional description</small>
+                </h1>
+
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                    <li class="active">Here</li>
+                </ol>
+            </section>
+
+            <section class="content">
+                <!-- Your Page Content Here -->
+            </section>
+        </div>
+    </block>
+
+    <block name="main-footer">
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                Anything you want
+            </div>
+            <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+        </footer>
+    </block>
+
+</div>
+
+<script type="text/javascript" src="__STATIC__/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="__STATIC__/adminlte/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__STATIC__/adminlte/dist/js/app.min.js"></script>
+<script type="text/javascript" src="__STATIC__/leaf/js/leaf.js"></script>
+<script type="text/javascript" src="__STATIC__/leaf/plugins/art-dialog/dist/dialog-min.js"></script>
+<script>
+    var menu = '{$menu}';
+    $('.treeview-menu > li > a').each(function () {
+        if ($(this).attr('href').indexOf(menu) > -1) {
+            $(this).parent().addClass("active");
+            $(this).parent().parent().parent().addClass("active");
+        }
+    });
+</script>
+<block name="js"></block>
+
+</body>
+</html>

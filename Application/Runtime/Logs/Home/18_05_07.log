@@ -1,0 +1,1321 @@
+[ 2018-05-07T01:07:49+08:00 ] 203.208.60.144 /Post/detail/id/136.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000085s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000091s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000135s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0016s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0014s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('203.208.60.144','117.01799674','25.07868543','福建省龙岩市','https://old.bobcoder.cc/Post/detail/id/136.html','2018-05-07 01:07:49','北京谷翔信息技术有限公司BGP节点') [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0014s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `post` WHERE ( id=136 and status=1 ) LIMIT 1   [ RunTime:0.0043s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` < '136' ORDER BY id desc LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` > '136' ORDER BY id asc LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=136 ) LIMIT 1   [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0014s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 136 )  [ RunTime:0.0012s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=136 ) [ RunTime:0.0095s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010493s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010538s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000071s ]
+
+[ 2018-05-07T02:08:59+08:00 ] 203.208.60.145 /Post/detail/id/136.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000109s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000107s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000147s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0031s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0027s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('203.208.60.145','117.01799674','25.07868543','福建省龙岩市','https://old.bobcoder.cc/Post/detail/id/136.html','2018-05-07 02:08:59','北京谷翔信息技术有限公司BGP节点') [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0017s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0018s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0017s ]
+SQL: SELECT * FROM `post` WHERE ( id=136 and status=1 ) LIMIT 1   [ RunTime:0.0061s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` < '136' ORDER BY id desc LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` > '136' ORDER BY id asc LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=136 ) LIMIT 1   [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0031s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 136 )  [ RunTime:0.0016s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=136 ) [ RunTime:0.0088s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010188s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010231s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000076s ]
+
+[ 2018-05-07T02:20:01+08:00 ] 70.42.131.170 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000071s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000064s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000106s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0022s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('70.42.131.170',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 02:20:01','')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('70.42.131.170',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 02:20:01','')
+
+[ 2018-05-07T02:51:30+08:00 ] 106.11.157.235 /post/tab/id/27.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000074s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000069s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000122s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('106.11.157.235','113.39481756','23.40800373','广东省','https://old.bobcoder.cc/post/tab/id/27.html','2018-05-07 02:51:30','阿里巴巴网络有限公司BGP数据中心') [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0016s ]
+SQL: SELECT * FROM `post_tab` WHERE ( id=27 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT `tab_name` FROM `post_tab` WHERE ( id=27 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dim_post_tab` WHERE ( p_id=27 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT p.* FROM post p left JOIN dim_post_tab as a on a.p_id = p.id  WHERE ( a.t_id=27 ) ORDER BY created_at desc LIMIT 0,5   [ RunTime:0.0018s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: title /alidata/www/blog/Application/Runtime/Cache/Home/bb96fb0a81af930b201d40c2485c606b.php 第 9 行.
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/bb96fb0a81af930b201d40c2485c606b.php 第 82 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010289s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010333s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000057s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000101s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000080s ]
+
+[ 2018-05-07T04:26:16+08:00 ] 139.162.116.133 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000112s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000156s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0020s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0017s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('139.162.116.133',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 04:26:16','东京都品川区Linode数据中心')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('139.162.116.133',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 04:26:16','东京都品川区Linode数据中心')
+
+[ 2018-05-07T04:52:43+08:00 ] 80.82.70.187 /cache/global/img/gs.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000089s ]
+
+[ 2018-05-07T05:22:31+08:00 ] 203.208.60.145 /Post/detail/id/136.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000078s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000075s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000115s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0017s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('203.208.60.145','117.01799674','25.07868543','福建省龙岩市','https://old.bobcoder.cc/Post/detail/id/136.html','2018-05-07 05:22:31','北京谷翔信息技术有限公司BGP节点') [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0015s ]
+SQL: SELECT * FROM `post` WHERE ( id=136 and status=1 ) LIMIT 1   [ RunTime:0.0063s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.0031s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` < '136' ORDER BY id desc LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` > '136' ORDER BY id asc LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=136 ) LIMIT 1   [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0017s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 136 )  [ RunTime:0.0016s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=136 ) [ RunTime:0.0113s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010231s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010276s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000076s ]
+
+[ 2018-05-07T06:03:10+08:00 ] 203.208.60.148 /Post/detail/id/136.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000072s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000063s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000103s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0015s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0014s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('203.208.60.148','117.01799674','25.07868543','福建省龙岩市','https://old.bobcoder.cc/Post/detail/id/136.html','2018-05-07 06:03:10','北京谷翔信息技术有限公司BGP节点') [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0015s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `post` WHERE ( id=136 and status=1 ) LIMIT 1   [ RunTime:0.0046s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` < '136' ORDER BY id desc LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` > '136' ORDER BY id asc LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=136 ) LIMIT 1   [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0014s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 136 )  [ RunTime:0.0012s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=136 ) [ RunTime:0.0086s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012715s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012775s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000137s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000045s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000088s ]
+
+[ 2018-05-07T07:29:03+08:00 ] 106.11.153.240 /Post/detail/id/142.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000071s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000063s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000104s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0023s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0022s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('106.11.153.240','102.89915972','30.36748094','四川省','https://old.bobcoder.cc/Post/detail/id/142.html','2018-05-07 07:29:02','阿里巴巴网络有限公司BGP数据中心') [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0020s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `post` WHERE ( id=142 and status=1 ) LIMIT 1   [ RunTime:0.0095s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=142 ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '23' AND `id` < '142' ORDER BY id desc LIMIT 1   [ RunTime:0.0021s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '23' AND `id` > '142' ORDER BY id asc LIMIT 1   [ RunTime:0.0058s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=142 ) LIMIT 1   [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0022s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 142 )  [ RunTime:0.0021s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=142 ) [ RunTime:0.0134s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010263s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010306s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000117s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000072s ]
+
+[ 2018-05-07T08:25:29+08:00 ] 203.208.60.148 /Post/detail/id/136.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000061s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000103s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0015s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0014s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('203.208.60.148','117.01799674','25.07868543','福建省龙岩市','https://old.bobcoder.cc/Post/detail/id/136.html','2018-05-07 08:25:29','北京谷翔信息技术有限公司BGP节点') [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0013s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `post` WHERE ( id=136 and status=1 ) LIMIT 1   [ RunTime:0.0045s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` < '136' ORDER BY id desc LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` > '136' ORDER BY id asc LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=136 ) LIMIT 1   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0014s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 136 )  [ RunTime:0.0012s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=136 ) [ RunTime:0.0106s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010307s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010352s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000072s ]
+
+[ 2018-05-07T08:59:01+08:00 ] 47.97.220.124 /Post/detail/id/136.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000070s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000108s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000150s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0023s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0023s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('47.97.220.124','119.95720242','29.15949412','浙江省','https://old.bobcoder.cc/Post/detail/id/136.html','2018-05-07 08:59:01','') [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0024s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0021s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0021s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0021s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `post` WHERE ( id=136 and status=1 ) LIMIT 1   [ RunTime:0.0082s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` < '136' ORDER BY id desc LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` > '136' ORDER BY id asc LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=136 ) LIMIT 1   [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0022s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 136 )  [ RunTime:0.0021s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=136 ) [ RunTime:0.0124s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010084s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000071s ]
+
+[ 2018-05-07T09:07:22+08:00 ] 116.62.176.205 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000071s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000070s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000140s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0021s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0019s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('116.62.176.205','119.95720242','29.15949412','浙江省','https://59.110.0.144:80/','2018-05-07 09:07:22','铁通') [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0021s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0020s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0017s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000021s ]
+INFO: [ action_begin ] --END-- [ RunTime:-0.123115s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0018s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM post p WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT p.id,p.title,p.content,p.read_count,p.like_num,p.created_at,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 ORDER BY created_at desc LIMIT 0,5   [ RunTime:0.0125s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011040s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011087s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000073s ]
+
+[ 2018-05-07T09:48:19+08:00 ] 35.193.9.56 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000087s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000071s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0023s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0022s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('35.193.9.56',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 09:48:19','Merit网络公司')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('35.193.9.56',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 09:48:19','Merit网络公司')
+
+[ 2018-05-07T10:39:11+08:00 ] 13.57.29.6 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000062s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000102s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0017s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('13.57.29.6',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 10:39:11','Xerox')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('13.57.29.6',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 10:39:11','Xerox')
+
+[ 2018-05-07T13:28:15+08:00 ] 107.170.193.122 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000061s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0017s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('107.170.193.122',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 13:28:15','加州旧金山SFO数据中心')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('107.170.193.122',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 13:28:15','加州旧金山SFO数据中心')
+
+[ 2018-05-07T13:51:14+08:00 ] 203.208.60.146 /Post/detail/id/136.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000070s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000063s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000104s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0021s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0013s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('203.208.60.146','117.01799674','25.07868543','福建省龙岩市','https://old.bobcoder.cc/Post/detail/id/136.html','2018-05-07 13:51:14','北京谷翔信息技术有限公司BGP节点') [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0016s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `post` WHERE ( id=136 and status=1 ) LIMIT 1   [ RunTime:0.0047s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` < '136' ORDER BY id desc LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` > '136' ORDER BY id asc LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=136 ) LIMIT 1   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0014s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 136 )  [ RunTime:0.0012s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=136 ) [ RunTime:0.0086s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010317s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010360s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000074s ]
+
+[ 2018-05-07T14:04:46+08:00 ] 80.82.70.187 /cache/global/img/gs.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+
+[ 2018-05-07T14:04:47+08:00 ] 80.82.70.187 /cache/global/img/gs.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+
+[ 2018-05-07T15:19:50+08:00 ] 139.162.106.181 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000064s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000104s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0023s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0022s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('139.162.106.181',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 15:19:50','东京都品川区Linode数据中心')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('139.162.106.181',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 15:19:50','东京都品川区Linode数据中心')
+
+[ 2018-05-07T16:05:02+08:00 ] 178.73.215.171 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000085s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000119s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000063s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000102s ]
+NOTIC: [8] Undefined index: HTTP_HOST /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 64 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0018s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0018s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('178.73.215.171',NULL,NULL,NULL,'https:///','2018-05-07 16:05:02','')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('178.73.215.171',NULL,NULL,NULL,'https:///','2018-05-07 16:05:02','')
+
+[ 2018-05-07T17:16:44+08:00 ] 60.250.76.122 /Post/detail/id/133.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000076s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000093s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000150s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0018s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('60.250.76.122','120.36132599','23.77722277','台湾省','https://old.bobcoder.cc/Post/detail/id/133.html','2018-05-07 17:16:43','中华电信(HiNet)数据中心') [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0018s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0018s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0016s ]
+SQL: SELECT * FROM `post` WHERE ( id=133 and status=1 ) LIMIT 1   [ RunTime:0.0170s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=133 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` < '133' ORDER BY id desc LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '22' AND `id` > '133' ORDER BY id asc LIMIT 1   [ RunTime:0.0113s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=133 ) LIMIT 1   [ RunTime:0.0084s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0019s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 133 )  [ RunTime:0.0017s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=133 ) [ RunTime:0.0214s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011351s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000077s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000079s ]
+
+[ 2018-05-07T17:31:21+08:00 ] 203.208.60.141 /.well-known/assetlinks.json
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000072s ]
+ERR: 无法加载控制器:.well-known
+
+[ 2018-05-07T18:22:23+08:00 ] 139.162.119.197 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000062s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000102s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0024s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0022s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('139.162.119.197',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 18:22:23','东京都品川区Linode数据中心')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('139.162.119.197',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 18:22:23','东京都品川区Linode数据中心')
+
+[ 2018-05-07T19:13:22+08:00 ] 123.125.67.163 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000102s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000062s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000101s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0015s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0014s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('123.125.67.163','116.40387397','39.91488908','北京市','https://old.bobcoder.cc/','2018-05-07 19:13:22','北京百度网讯科技有限公司联通节点(BGP)') [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0013s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0011s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000022s ]
+INFO: [ action_begin ] --END-- [ RunTime:-0.109657s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0014s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM post p WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT p.id,p.title,p.content,p.read_count,p.like_num,p.created_at,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 ORDER BY created_at desc LIMIT 0,5   [ RunTime:0.0088s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011407s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011452s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000073s ]
+
+[ 2018-05-07T19:15:00+08:00 ] 123.125.71.106 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000095s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000138s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0023s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0022s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('123.125.71.106','116.40387397','39.91488908','北京市','https://old.bobcoder.cc/','2018-05-07 19:15:00','北京百度网讯科技有限公司联通节点(BGP)') [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0019s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0021s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0019s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000023s ]
+INFO: [ action_begin ] --END-- [ RunTime:-0.133749s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0019s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0019s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0019s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT COUNT(*) AS tp_count FROM post p WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT p.id,p.title,p.content,p.read_count,p.like_num,p.created_at,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 ORDER BY created_at desc LIMIT 0,5   [ RunTime:0.0150s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011216s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000077s ]
+
+[ 2018-05-07T19:48:49+08:00 ] 31.184.193.154 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000063s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000106s ]
+NOTIC: [8] Undefined index: HTTP_HOST /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 64 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0018s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('31.184.193.154',NULL,NULL,NULL,'https:///','2018-05-07 19:48:49','')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('31.184.193.154',NULL,NULL,NULL,'https:///','2018-05-07 19:48:49','')
+
+[ 2018-05-07T20:12:56+08:00 ] 80.82.78.50 /cache/global/img/gs.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000136s ]
+
+[ 2018-05-07T20:31:23+08:00 ] 115.234.109.94 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000101s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000134s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000070s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000117s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0015s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0014s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('115.234.109.94','120.69063473','28.00283759','浙江省温州市','https://old.bobcoder.cc/','2018-05-07 20:31:23','电信') [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0013s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0012s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000022s ]
+INFO: [ action_begin ] --END-- [ RunTime:-0.108689s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM post p WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT p.id,p.title,p.content,p.read_count,p.like_num,p.created_at,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 ORDER BY created_at desc LIMIT 0,5   [ RunTime:0.0094s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012140s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012185s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2018-05-07T20:31:41+08:00 ] 115.234.109.94 /Post/detail/id/145.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000122s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000072s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000061s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000099s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0015s ]
+SQL: SELECT * FROM `post` WHERE ( id=145 and status=1 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=145 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '23' AND `id` < '145' ORDER BY id desc LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '23' AND `id` > '145' ORDER BY id asc LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=145 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0018s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 145 )  [ RunTime:0.0016s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=145 ) [ RunTime:0.0083s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009961s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000079s ]
+
+[ 2018-05-07T20:33:14+08:00 ] 123.125.71.34 /Post/index/id/22.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000111s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000075s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000061s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000101s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0023s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0021s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('123.125.71.34','116.40387397','39.91488908','北京市','https://old.bobcoder.cc/Post/index/id/22.html','2018-05-07 20:33:14','北京百度网讯科技有限公司联通节点(BGP)') [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0022s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0021s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `post_category` WHERE ( id=22 and status=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM post p WHERE `category_id` = '22' AND p.status = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT p.id,p.title,p.content,p.read_count,p.like_num,p.created_at,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `category_id` = '22' AND p.status = 1 ORDER BY created_at desc LIMIT 0,5   [ RunTime:0.0595s ]
+SQL: SELECT `name` FROM `post_category` WHERE ( id=22 ) LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/bb96fb0a81af930b201d40c2485c606b.php 第 82 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011803s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011848s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000077s ]
+
+[ 2018-05-07T20:35:01+08:00 ] 42.236.54.22 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000075s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000062s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000103s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0017s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('42.236.54.22','113.48680406','34.15718377','河南省','https://old.bobcoder.cc/','2018-05-07 20:35:01','联通') [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0016s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000023s ]
+INFO: [ action_begin ] --END-- [ RunTime:-0.127738s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0017s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM post p WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT p.id,p.title,p.content,p.read_count,p.like_num,p.created_at,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `category_id` > 0 AND `homepage` = 1 AND p.status = 1 ORDER BY created_at desc LIMIT 0,5   [ RunTime:0.0121s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011884s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011929s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2018-05-07T21:51:20+08:00 ] 54.193.39.103 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000103s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000063s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0016s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0015s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('54.193.39.103',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 21:51:20','华盛顿州西雅图市亚马逊(Amazon)公司数据中心')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('54.193.39.103',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 21:51:20','华盛顿州西雅图市亚马逊(Amazon)公司数据中心')
+
+[ 2018-05-07T22:59:26+08:00 ] 184.105.139.67 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000094s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000087s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000069s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000155s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0024s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0022s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('184.105.139.67',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 22:59:26','加利福尼亚州弗里蒙特市Hurricane Electric公司')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('184.105.139.67',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 22:59:26','加利福尼亚州弗里蒙特市Hurricane Electric公司')
+
+[ 2018-05-07T23:00:09+08:00 ] 220.181.108.121 /Post/index/id/21.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000070s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000064s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000104s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0020s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0018s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('220.181.108.121','114.02597366','22.54605355','广东省深圳市','https://old.bobcoder.cc/Post/index/id/21.html','2018-05-07 23:00:09','北京百度网讯科技有限公司电信节点') [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0017s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0016s ]
+SQL: SELECT * FROM `post_category` WHERE ( id=21 and status=1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM post p WHERE `category_id` = '21' AND p.status = 1 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT p.id,p.title,p.content,p.read_count,p.like_num,p.created_at,pc.name as category_name FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE `category_id` = '21' AND p.status = 1 ORDER BY created_at desc LIMIT 0,5   [ RunTime:0.0031s ]
+SQL: SELECT `name` FROM `post_category` WHERE ( id=21 ) LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/bb96fb0a81af930b201d40c2485c606b.php 第 82 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010502s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010546s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000080s ]
+
+[ 2018-05-07T23:08:38+08:00 ] 205.209.165.204 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000071s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000066s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: HTTP_HOST /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 64 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0027s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0017s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('205.209.165.204',NULL,NULL,NULL,'https:///','2018-05-07 23:08:38','圣何塞DCS机房')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('205.209.165.204',NULL,NULL,NULL,'https:///','2018-05-07 23:08:38','圣何塞DCS机房')
+
+[ 2018-05-07T23:09:10+08:00 ] 205.209.165.204 /stats
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000071s ]
+ERR: 无法加载控制器:Stats
+
+[ 2018-05-07T23:09:13+08:00 ] 205.209.165.204 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000081s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000062s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8] Undefined index: HTTP_HOST /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 64 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0022s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0023s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('205.209.165.204',NULL,NULL,NULL,'https:///','2018-05-07 23:09:13','圣何塞DCS机房')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('205.209.165.204',NULL,NULL,NULL,'https:///','2018-05-07 23:09:13','圣何塞DCS机房')
+
+[ 2018-05-07T23:09:13+08:00 ] 205.209.165.204 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000070s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000051s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000091s ]
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 69 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 70 行.
+NOTIC: [8] Undefined index: content /alidata/www/blog/Application/Home/Controller/BaseController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0018s ]
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('205.209.165.204',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 23:09:13','圣何塞DCS机房')
+ERR: 1048:Column 'longitude' cannot be null
+ [ SQL语句 ] : INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('205.209.165.204',NULL,NULL,NULL,'https://120.78.142.118/','2018-05-07 23:09:13','圣何塞DCS机房')
+
+[ 2018-05-07T23:09:16+08:00 ] 205.209.165.204 /sdk
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+ERR: 无法加载控制器:Sdk
+
+[ 2018-05-07T23:09:16+08:00 ] 205.209.165.204 /nmaplowercheck1525705752
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000080s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+ERR: 无法加载控制器:Nmaplowercheck1525705752
+
+[ 2018-05-07T23:09:16+08:00 ] 205.209.165.204 /HNAP1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000067s ]
+ERR: 无法加载控制器:HNAP1
+
+[ 2018-05-07T23:23:24+08:00 ] 14.152.64.153 /Post/detail/id/142.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000106s ]
+INFO: [ action_begin ] --START--
+INFO: Run \Admin\Behaviors\loginBehavior [ RunTime:0.000063s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000104s ]
+SQL: SHOW COLUMNS FROM `shield_ip` [ RunTime:0.0019s ]
+SQL: SELECT `ip` FROM `shield_ip`  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `visit_log` [ RunTime:0.0017s ]
+SQL: INSERT INTO `visit_log` (`ip`,`longitude`,`latitude`,`address`,`url`,`created_at`,`area`) VALUES ('14.152.64.153','113.30764968','23.12004910','广东省广州市','https://old.bobcoder.cc/Post/detail/id/142.html','2018-05-07 23:23:24','电信') [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `post_category` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `post_category` WHERE ( status = 1 ) ORDER BY sort asc  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY created_at desc LIMIT 10   [ RunTime:0.0017s ]
+SQL: SELECT `id`,`title` FROM `post` ORDER BY read_count desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `user_info` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `post_tab` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`tab_name`,`class_tab` FROM `post_tab`  [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `post` LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `friend_line` [ RunTime:0.0017s ]
+SQL: SELECT `line_name`,`line_url` FROM `friend_line` WHERE ( status = 1 )  [ RunTime:0.0016s ]
+SQL: SELECT * FROM `post` WHERE ( id=142 and status=1 ) LIMIT 1   [ RunTime:0.0075s ]
+SQL: SELECT `category_id` FROM `post` WHERE ( id=142 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '23' AND `id` < '142' ORDER BY id desc LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `post` WHERE `category_id` = '23' AND `id` > '142' ORDER BY id asc LIMIT 1   [ RunTime:0.0069s ]
+SQL: SELECT p.*,pc.name as category_name,pc.id as cid FROM post p left JOIN post_category pc on p.category_id = pc.id  WHERE ( p.id=142 ) LIMIT 1   [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `dim_post_tab` [ RunTime:0.0019s ]
+SQL: SELECT b.id,b.tab_name,b.class_tab FROM dim_post_tab as a left JOIN post_tab as b on b.id = a.t_id  WHERE ( a.p_id = 142 )  [ RunTime:0.0018s ]
+SQL: UPDATE `post` SET `read_count`=read_count+1 WHERE ( id=142 ) [ RunTime:0.0122s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined variable: status /alidata/www/blog/Application/Runtime/Cache/Home/2ae952bfbc2fd5af8552fdff1c1aa73c.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010535s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010580s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000073s ]
+

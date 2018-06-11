@@ -1,0 +1,171 @@
+<extend name="Layouts/main"/>
+
+<block name="content-wrapper">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                友情链接审核
+                <small>友链审核管理</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="javascript:;"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active"> 友情链接审核</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form action="{:U('Friend/examine')}" method="get">
+                        <div class="box box-default">
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <input type="text" name="name" value="{$keyword}" class="form-control"
+                                               placeholder="链接名称">
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="">
+                                            <button type="submit" class="btn btn-default">
+                                                <span class="glyphicon glyphicon-search"></span> 搜索
+                                            </button>
+                                            <a href="{:U('Friend/examine')}" class="btn btn-default">
+                                                <span class="glyphicon glyphicon-repeat"></span>清空
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <notempty name="Think.cookie.successMsg">
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            {$Think.cookie.successMsg}
+                        </div>
+                    </notempty>
+                    <notempty name="Think.cookie.errorMsg">
+                        <div class="alert alert-warning alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            {$Think.cookie.errorMsg}
+                        </div>
+                    </notempty>
+
+                    <div class="box">
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody>
+                                <tr>
+                                    <th class="col-md-1 text-center"><input class="js-select-all" type="checkbox"></th>
+                                    <th class="col-md-1 text-center">ID</th>
+                                    <th class="col-md-1 text-center">友链名</th>
+                                    <th class="col-md-2 text-center">网址</th>
+                                    <th class="col-md-2 text-center">邮箱</th>
+                                    <th class="col-md-2 text-center">添加时间</th>
+                                    <th class="col-md-2 text-center">IP</th>
+                                    <th class="col-md-2 text-center">操作</th>
+                                </tr>
+
+                                <foreach name="line" item="line">
+                                    <tr>
+                                        <td class="text-center"><input class="ids" type="checkbox"
+                                                                       value="{$line.id}"></td>
+                                        <td class="text-center">{$line.id}</td>
+                                        <td class="text-center">{$line.name}</td>
+                                        <td class="text-center"><a href="{$line.website}" target="view_window">{$line.website}</a></td>
+                                        <td class="text-center">{$line.email}</td>
+                                        <td class="text-center">{$line.created_at}</td>
+                                        <td class="text-center">{$line.ip}</td>
+                                        <td class="text-center">
+                                            <a href="{:U('Friend/ExamineAdd', array('id'=>$line['id']))}"
+                                               class="glyphicon glyphicon-pencil operation" title="通过审核">
+                                            </a>
+                                            <a data-id="{$line.id}"
+                                               class="js-delete-one glyphicon glyphicon-trash operation text-danger"
+                                               title="删除" href="javascript:;">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tr>
+                                </foreach>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-header">
+                            <a href="javascript:;" class="js-delete btn btn-default">
+                                <span class="glyphicon glyphicon-trash text-danger"></span>删除
+                            </a>
+                            <form id="js-delete-form" method="post" action="{:U('Friend/ExamineDelete')}"
+                                  style="display: none">
+                                <input type="text" name="id" value="">
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--分页-->
+                    <div class="box-tools pull-right">
+                        <ul class="pagination inline">
+                            {$pagination}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</block>
+
+<block name="js">
+    <script>
+        $(function () {
+            // 删除单条
+            $(".js-delete-one").click(function () {
+                var id = $(this).attr("data-id");
+
+                leaf.confirm("您确定要删除吗？", function () {
+                    // 把id填充到form表单中
+                    $("#js-delete-form input[name='id']").val(id);
+
+                    // 提交表单
+                    $("#js-delete-form").submit();
+                });
+            });
+
+            // 多条删除
+            $(".js-delete").click(function () {
+                var ids = [];
+                var checkboxList = $(".ids:checked"); // 取到已选中的项
+
+                for (var i = 0; i < checkboxList.length; i++) {
+                    ids.push($(checkboxList[i]).val());
+                }
+
+                if (ids.length == 0) {
+                    leaf.toast("请选择你要删除的数据！");
+                    return;
+                }
+
+                leaf.confirm("你确定要删除吗？", function () {
+                    // 把id填充到form表单中
+                    $("#js-delete-form input[name='id']").val(ids.toString());
+
+                    // 提交表单
+                    $("#js-delete-form").submit();
+                });
+            });
+
+            // 实现全选影响下面复选框的选中效果
+            $(".js-select-all").click(function () {
+                $(".ids").prop("checked", $(this).prop('checked'));
+            });
+
+            // 实现单个选择影响上方复选框的选中效果
+            $('.ids').click(function () {
+                $('.js-select-all').prop('checked', $('.ids:not(:checked)').length == 0);
+            });
+
+        })
+
+    </script>
+</block>

@@ -1,0 +1,87 @@
+<extend name="Layouts/main"/>
+<block name="css">
+    <link rel="stylesheet" href="__STATIC__/share/dist/css/share.min.css">
+    <link rel="stylesheet" href="__STATIC__/share/demo/life.css">
+    <link rel="stylesheet" href="__STATIC__/share/default.css">
+
+</block>
+<block name="content">
+    <div class="col-md-9" style="margin-top: 65px">
+        <notempty name="Think.cookie.successMsg">
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                {$Think.cookie.successMsg}
+            </div>
+        </notempty>
+        <notempty name="Think.cookie.errorMsg">
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                {$Think.cookie.errorMsg}
+            </div>
+        </notempty>
+    <div id="primary" class="site-content" style="background-color: #fff;">
+        <section class="single-content">
+            <div class="contact" style="padding:30px;">
+                <div id="hint">
+                    <p style="color:#f00;">
+                    交换友情链接规则：<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、建站时间最好是3月以上。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、最好是同行业的。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、最好是有把网站长期做下去的意愿，能适时地有更新。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、严禁经常打不开或者访问速度巨慢。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、不可随意取消我的友链，我会随时检查，如果发现没有反链，那么我将取消你的链接。<br>
+                    </p>
+                    <p>申请友情链接的朋友，请您仔细填写下面表单内容，我会在最短时间内给您回复，请留意您的邮箱，谢谢啦！</p></div>
+                <form action="/Apply/saveFriend.html" method="post" id="tolink" name="tolink" class="index_contact_form">
+                    <div class="contact_form_inner_form">
+                        <div>
+                            <label>网站名称</label>
+                            <input type="text" name="name" id="form_name" style="padding:5px;border:1px solid #ccc;-webkit-appearance: none;width:60%;margin:3px;" placeholder="您的网站名称" required="required"><strong>*</strong>
+                        </div>
+                        <div>
+                            <label>邮箱地址</label>
+                            <input type="email" name="email" id="form_email" style="padding:5px;border:1px solid #ccc;-webkit-appearance: none;width:60%;margin:3px;" placeholder="您的邮箱地址" required="required"><strong>*</strong>
+                        </div>
+                        <div>
+                            <label>网站地址</label>
+                            <input type="url" name="website" id="form_website" style="padding:5px;border:1px solid #ccc;-webkit-appearance: none;width:60%;margin:3px;" placeholder="您的网站地址(http://)" required="required"><strong>*</strong>
+                        </div>
+                        <div>
+                            <label>网站简介</label>
+                            <textarea name="content" id="content" style="height:100px;padding:5px;width:96.5%;-webkit-appearance: none;" cols="" rows="" required="required" placeholder="您的网站简介"></textarea><strong>*</strong>
+                        </div>
+                        <div>
+                            <label>验证码</label>
+                            <input type="text" name="code" id="code" style="padding:5px;border:1px solid #ccc;-webkit-appearance: none;width:30%;margin:3px;" placeholder="右侧的验证码" required="required"><strong>*</strong>
+                            <img src="/Apply/createCode.html" alt="验证码" title="看不清楚？点击换一张" style="width: 80px;height: 30px" onclick="this.src=this.src+'?'+Math.random();" onselectstart="return false;">
+                            <span id="error"></span>
+                        </div>
+                        <div>
+                            <input type="submit" value="提交申请" class="contact_form_submit" style="cursor:pointer;background: #343434;width:87px;height:35px;color: #fff;text-align:center;margin:10px 0 0 0;border:0px;border-radius:2px;-webkit-appearance: none;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    </div>
+</block>
+<block name="js">
+<script>
+    $(document).ready(function() {
+        $("#code").blur(function() {
+            var code = $("#code").val();
+            // 向后台发送处理数据
+            $.ajax({
+                url : "/Apply/VerificationCode",
+                data : "code=" + code,
+                type : "post",
+                dataType : "text",
+                success : function(data) {
+                    $("#error").html(data);
+                }
+            });
+        });
+    });
+</script>
+</block>
